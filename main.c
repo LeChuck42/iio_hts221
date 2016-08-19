@@ -80,7 +80,7 @@ static struct iio_chan_spec hts221_channels[] = {
 	{
 		.type = IIO_TEMP,
 		.indexed = 0,
-		.output = 1,
+		.output = 0,
 		.channel = 0,
 		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
 		                      BIT(IIO_CHAN_INFO_PROCESSED)
@@ -88,7 +88,7 @@ static struct iio_chan_spec hts221_channels[] = {
 	{
 		.type = IIO_HUMIDITYRELATIVE,
 		.indexed = 0,
-		.output = 1,
+		.output = 0,
 		.channel = 1,
 		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
 		                      BIT(IIO_CHAN_INFO_PROCESSED)
@@ -457,13 +457,13 @@ static IIO_DEVICE_ATTR(start_single,
 			hts221_write_cntrl2,
 			CNTRL2_BIT_ONE_SHOT);
 
-static IIO_DEVICE_ATTR(out_temp_avg,
+static IIO_DEVICE_ATTR(in_temp_avg,
 			S_IRUGO | S_IWUSR,
 			hts221_read_avg,
 			hts221_write_avg,
 			HTS221_T_AVG);
 
-static IIO_DEVICE_ATTR(out_humidityrelative_avg,
+static IIO_DEVICE_ATTR(in_humidityrelative_avg,
 			S_IRUGO | S_IWUSR,
 			hts221_read_avg,
 			hts221_write_avg,
@@ -475,8 +475,8 @@ static struct attribute *hts221_attributes[] = {
 	&iio_dev_attr_enabled.dev_attr.attr,
 	&iio_dev_attr_heater.dev_attr.attr,
 	&iio_dev_attr_start_single.dev_attr.attr,
-	&iio_dev_attr_out_temp_avg.dev_attr.attr,
-	&iio_dev_attr_out_humidityrelative_avg.dev_attr.attr,
+	&iio_dev_attr_in_temp_avg.dev_attr.attr,
+	&iio_dev_attr_in_humidityrelative_avg.dev_attr.attr,
 	NULL
 };
 
