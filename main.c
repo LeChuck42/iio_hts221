@@ -185,7 +185,6 @@ static int hts221_update_ctrl(struct iio_dev *indio_dev, u8 set, u8 clr)
 
 static int hts221_read_calib(struct iio_dev *indio_dev)
 {
-	struct hts221_state *st = iio_priv(indio_dev);
 	int buf;
 	
 	u16 H[2];
