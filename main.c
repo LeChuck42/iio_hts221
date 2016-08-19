@@ -83,13 +83,7 @@ static struct iio_chan_spec hts221_channels[] = {
 		.output = 1,
 		.channel = 0,
 		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
-		                      BIT(IIO_CHAN_INFO_PROCESSED),
-		.scan_type = {
-			.sign = 'u',
-			.realbits = 12,
-			.storagebits = 16,
-			.shift = 4,
-		}
+		                      BIT(IIO_CHAN_INFO_PROCESSED)
 	},
 	{
 		.type = IIO_HUMIDITYRELATIVE,
@@ -97,13 +91,7 @@ static struct iio_chan_spec hts221_channels[] = {
 		.output = 1,
 		.channel = 1,
 		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
-		                      BIT(IIO_CHAN_INFO_PROCESSED),
-		.scan_type = {
-			.sign = 'u',
-			.realbits = 12,
-			.storagebits = 16,
-			.shift = 4,
-		}
+		                      BIT(IIO_CHAN_INFO_PROCESSED)
 	},
 };
 
